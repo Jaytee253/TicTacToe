@@ -5,7 +5,6 @@ public class Main extends Board{
     static int[] columnA = new int[2];
     static int[] columnB = new int[2];
     static int[] columnC = new int[2];
-    static int[] row = new int[2];
 
     public static void main(String[] args){
         Scanner userInput = new Scanner(System.in);
