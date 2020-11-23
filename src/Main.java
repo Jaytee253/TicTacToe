@@ -6,10 +6,7 @@ public class Main extends Board{
     public static void main(String[] args){
         Scanner userInput = new Scanner(System.in);
         Board ticTacToe = new Board();
-        boolean[] tiles = new boolean[8];
-        for (int i = 0; i < 8; i++){
-            tiles[i] = false;
-        }
+        makeArray(tiles);
 
         while (true) {
             System.out.println("Lets play TicTacToe");
@@ -40,6 +37,12 @@ public class Main extends Board{
         char rowInputAsChar = tile.charAt(1);
         int rowInput = Character.getNumericValue(rowInputAsChar);
         char markedTile = ' ';
+
+        if (turn == 1) {
+            markedTile = 'X';
+        } else {
+            markedTile = 'O';
+        }
 
         if (columnInput == 'a' || columnInput == 'A'){
             switch (rowInput){
@@ -110,21 +113,12 @@ public class Main extends Board{
                 markedTile = ' ';
             }
             
-            if (turn == 1) {
-                markedTile = 'X';
-            } else {
-                markedTile = 'O';
-            }
-
+            
+            
+            System.out.println(markedTile);
             return markedTile;
         }
           
-
-    public static char tileSymbol(String playerOneTile, String tile, char markedTile){
-       
-
-        return markedTile;
-    }
 
 }
 

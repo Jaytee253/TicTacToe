@@ -9,8 +9,9 @@ public class Board {
     public static char c1 = ' ';
     public static char c2 = ' ';
     public static char c3 = ' ';
+    public static boolean gameSet;
+    public static boolean[] tiles = new boolean[8];
 
-    
     public void printBoard(){
         System.out.println(" A   B   C  ");
         printRow(a1, b1, c1);
@@ -22,6 +23,21 @@ public class Board {
 
     public static void printRow(char a, char b, char c){
         System.out.println(" " + a + " | " + b + " | " + c);
+    }
+
+    public static boolean[] makeArray(boolean[] tiles){
+        for (int i = 0; i < 9; i++){
+            tiles[i] = false;
+        }
+
+        return tiles;
+    }
+
+    public static boolean whoWon(boolean gameSet){
+        
+        
+
+        return gameSet;
     }
 
 
