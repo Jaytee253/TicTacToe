@@ -7,18 +7,24 @@ public class Main extends Board{
         Scanner userInput = new Scanner(System.in);
         Board ticTacToe = new Board();
         makeArray(tiles);
+        System.out.println("Let's play TicTacToe!");
+        ticTacToe.printBoard();
 
-        while (true) {
-            System.out.println("Lets play TicTacToe");
-            ticTacToe.printBoard();
+        while (Board.gameSet != true){
 
             System.out.println("Player 1, please place a tile.");
             String playerOneTile = userInput.next();
             String tile = playerOneTile;
-            int turn = 1;
+            turn = 1;
             tileInput(tile, tiles, playerOneTile, turn);
-            
             ticTacToe.printBoard();
+            whoWon(Board.gameSet);
+            
+            System.out.println(gameSet);
+            if (gameSet == true){
+                System.out.println("Game Set");
+                break;
+            }
 
             System.out.println("Player 2, please select your tile");
             String playerTwoTile = userInput.next();
@@ -26,18 +32,23 @@ public class Main extends Board{
             turn = 2;
             tileInput(tile, tiles, playerOneTile, turn);
             ticTacToe.printBoard();
-
-        }
-
+            whoWon(Board.gameSet);
+            
+            System.out.println(gameSet);
+        }   
+             
     }
+        
 
 
-    public static char tileInput(String tile, boolean[] tiles, String playerOneTile, int turn){
+
+    public static void tileInput(String tile, boolean[] tiles, String playerOneTile, int turn){
         char columnInput= tile.charAt(0);
         char rowInputAsChar = tile.charAt(1);
         int rowInput = Character.getNumericValue(rowInputAsChar);
         char markedTile = ' ';
-
+        
+        
         if (turn == 1) {
             markedTile = 'X';
         } else {
@@ -112,11 +123,7 @@ public class Main extends Board{
             } else {
                 markedTile = ' ';
             }
-            
-            
-            
-            System.out.println(markedTile);
-            return markedTile;
+        
         }
           
 
