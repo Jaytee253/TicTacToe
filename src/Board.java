@@ -13,18 +13,19 @@ public class Board {
     public static boolean gameSet = false;
     public static boolean[] tiles = new boolean[9];
     
+    
 
     public void printBoard(){
-        System.out.println(" A   B   C  ");
-        printRow(a1, b1, c1);
-        System.out.println("---|---|---");
-        printRow(a2, b2, c2);
-        System.out.println("---|---|---");
-        printRow(a3, b3, c3);
+        System.out.println("  A   B   C  ");
+        printRow(a1, b1, c1, 1);
+        System.out.println(" ---|---|---");
+        printRow(a2, b2, c2, 2);
+        System.out.println(" ---|---|---");
+        printRow(a3, b3, c3, 3);
     }
 
-    public static void printRow(char a, char b, char c){
-        System.out.println(" " + a + " | " + b + " | " + c);
+    public static void printRow(char a, char b, char c, int i){
+        System.out.println(i + " " + a + " | " + b + " | " + c);
     }
 
     public static boolean[] makeArray(boolean[] tiles){
@@ -39,7 +40,7 @@ public class Board {
 
     }
 
-    public static boolean whoWon(boolean gameSet){
+    public static boolean ifGameIsWon(boolean gameSet){
         
         if (a1 != ' ' && a1 == a2 && a1 == a3){
             Board.gameSet = true;

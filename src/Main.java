@@ -18,11 +18,9 @@ public class Main extends Board{
             turn = 1;
             tileInput(tile, tiles, playerOneTile, turn);
             ticTacToe.printBoard();
-            whoWon(Board.gameSet);
+            ifGameIsWon(Board.gameSet);
             
-            System.out.println(gameSet);
             if (gameSet == true){
-                System.out.println("Game Set");
                 break;
             }
 
@@ -32,10 +30,12 @@ public class Main extends Board{
             turn = 2;
             tileInput(tile, tiles, playerOneTile, turn);
             ticTacToe.printBoard();
-            whoWon(Board.gameSet);
+            ifGameIsWon(Board.gameSet);
             
-            System.out.println(gameSet);
-        }   
+            
+        }  
+        
+        userInput.close();
              
     }
         
