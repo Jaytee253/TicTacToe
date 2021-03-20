@@ -10,7 +10,7 @@ public class Main extends Board{
         System.out.println("Let's play TicTacToe!");
         ticTacToe.printBoard();
 
-        while (Board.gameSet != true){
+        while (!Board.gameSet){
 
             System.out.println("Player 1, please place a tile.");
             String playerOneTile = userInput.next();
@@ -20,7 +20,7 @@ public class Main extends Board{
             ticTacToe.printBoard();
             ifGameIsWon(Board.gameSet);
             
-            if (gameSet == true){
+            if (gameSet){
                 break;
             }
 
